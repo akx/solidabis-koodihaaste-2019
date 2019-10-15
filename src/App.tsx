@@ -40,7 +40,7 @@ const BullshitTableRow: React.FC<{
 const App: React.FC = () => {
   const remoteBullshits = useRemoteBullshit();
   const [bullshits, setBullshits] = React.useState<DecodedBullshit[]>([]);
-  const [threshold, setThreshold] = React.useState<number>(0.085);
+  const [threshold, setThreshold] = React.useState<number>(0.022);
   const [newPhrase, setNewPhrase] = React.useState<string>("");
   React.useEffect(() => {
     const newDecodedBullshits: DecodedBullshit[] = [];
