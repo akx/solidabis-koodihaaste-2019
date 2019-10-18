@@ -3,6 +3,7 @@ import useRemoteBullshit from "./hooks/useRemoteBullshit";
 import {
   decodeBullshit,
   DecodedBullshit,
+  initialDetectionThreshold,
   ShiftResult,
 } from "./bullshit-decoder";
 
@@ -40,7 +41,9 @@ const BullshitTableRow: React.FC<{
 const App: React.FC = () => {
   const remoteBullshits = useRemoteBullshit();
   const [bullshits, setBullshits] = React.useState<DecodedBullshit[]>([]);
-  const [threshold, setThreshold] = React.useState<number>(0.022);
+  const [threshold, setThreshold] = React.useState<number>(
+    initialDetectionThreshold,
+  );
   const [newPhrase, setNewPhrase] = React.useState<string>("");
   React.useEffect(() => {
     const newDecodedBullshits: DecodedBullshit[] = [];
@@ -58,7 +61,8 @@ const App: React.FC = () => {
     <>
       <div className="controls">
         <label>
-          Detection Threshold [{threshold.toFixed(3)}]:
+          Detection Threshold [{threshold.toFixed(3)}
+          ]:
           <input
             type="range"
             min={0}
