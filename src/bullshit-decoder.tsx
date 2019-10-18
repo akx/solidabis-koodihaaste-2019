@@ -1,5 +1,5 @@
 import { caesar, finnishShiftTables } from "./caesar";
-import { countNgrams, finnishNgrams } from "./lang-guess";
+import { computeNgrams, finnishNgrams } from "./lang-guess";
 
 export interface ShiftResult {
   shift: number;
