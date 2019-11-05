@@ -2,14 +2,14 @@
   "name": "solidabis-koodihaaste-2019",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://akx.github.io/solidabis-koodihaaste-2019",
   "dependencies": {
-    "@types/jest": "24.0.19",
-    "@types/node": "12.7.12",
-    "@types/react": "16.9.6",
-    "@types/react-dom": "16.9.2",
-    "lodash": "^4.17.15",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
+    "@types/jest": "24.0.21",
+    "@types/node": "12.12.5",
+    "@types/react": "16.9.11",
+    "@types/react-dom": "16.9.3",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
     "react-scripts": "3.2.0",
     "typescript": "3.6.4"
   },
@@ -19,7 +19,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prettify": "prettier --write src/*.* src/**/*.*",
-    "lint": "eslint --ext .ts,.tsx src"
+    "lint": "eslint --ext .ts,.tsx src",
+    "deploy": "yarn build && ghpg -d build -j -m $(git rev-parse HEAD) && git push -u origin gh-pages:gh-pages"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -37,12 +38,12 @@
     ]
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.144",
     "@typescript-eslint/eslint-plugin": "^2.6.1",
     "@typescript-eslint/parser": "^2.6.1",
     "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.5.0",
     "eslint-plugin-react": "^7.16.0",
+    "ghpg": "^1.0.1",
     "prettier": "^1.18.2"
   },
   "prettier": {
