@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/solidabis-koodihaaste-2019/static/css/main.fd0ff5ab.chunk.css",
+    "main.js": "/solidabis-koodihaaste-2019/static/js/main.6468343f.chunk.js",
+    "main.js.map": "/solidabis-koodihaaste-2019/static/js/main.6468343f.chunk.js.map",
+    "runtime-main.js": "/solidabis-koodihaaste-2019/static/js/runtime-main.282fa95b.js",
+    "runtime-main.js.map": "/solidabis-koodihaaste-2019/static/js/runtime-main.282fa95b.js.map",
+    "static/js/2.6d0262cb.chunk.js": "/solidabis-koodihaaste-2019/static/js/2.6d0262cb.chunk.js",
+    "static/js/2.6d0262cb.chunk.js.map": "/solidabis-koodihaaste-2019/static/js/2.6d0262cb.chunk.js.map",
+    "index.html": "/solidabis-koodihaaste-2019/index.html",
+    "precache-manifest.95957a3fdf2b3b8e6b8d5e36c0b898ee.js": "/solidabis-koodihaaste-2019/precache-manifest.95957a3fdf2b3b8e6b8d5e36c0b898ee.js",
+    "service-worker.js": "/solidabis-koodihaaste-2019/service-worker.js",
+    "static/css/main.fd0ff5ab.chunk.css.map": "/solidabis-koodihaaste-2019/static/css/main.fd0ff5ab.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.282fa95b.js",
+    "static/js/2.6d0262cb.chunk.js",
+    "static/css/main.fd0ff5ab.chunk.css",
+    "static/js/main.6468343f.chunk.js"
+  ]
+}
