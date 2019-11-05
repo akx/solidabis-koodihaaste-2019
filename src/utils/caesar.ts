@@ -27,7 +27,7 @@ export const finnishShiftTables = generateShiftTables([
   "ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ",
 ]);
 
-export const caesar = (s: string, shift: number, shiftTables: ShiftTables) => {
+export function caesar(s: string, shift: number, shiftTables: ShiftTables) {
   if (shift < 0 || shift >= shiftTables.maxShift) {
     throw new Error("Invalid shift value.");
   }
@@ -37,4 +37,4 @@ export const caesar = (s: string, shift: number, shiftTables: ShiftTables) => {
     chars.push(shiftTable[s[i]] || s[i]);
   }
   return chars.join("");
-};
+}

@@ -1,18 +1,8 @@
 import { caesar, finnishShiftTables } from "./caesar";
-
-export interface ShiftResult {
-  shift: number;
-  result: string;
-  score: number;
-}
-
-export interface DecodedBullshit {
-  original: string;
-  shiftResults: ShiftResult[];
-}
+import { DecodedBullshit, ShiftResult } from "../types";
 
 // Most common ngrams from the most common Finnish words.
-const finnishNgrams: Set<string> = new Set(require("./data/ngrams.json"));
+const finnishNgrams: Set<string> = new Set(require("../data/ngrams.json"));
 // Lengths of ngrams in the ngram set.
 const finnishNgramsLengths = [4, 5];
 // Carefully tuned initial detection threshold
@@ -51,4 +41,17 @@ export function decodeBullshit(bs: string): DecodedBullshit {
     shiftResults.push({ shift, result, score });
   }
   return { original: bs, shiftResults };
+}
+
+export function decodeRemoteBullshitList(
+  remoteBullshits: readonly string[],
+  bullshits: readonly DecodedBullshit[],
+) {
+  const newDecodedBullshits: DecodedBullshit[] = [];
+  (remoteBullshits || []).forEach(bs => {
+    if (!bullshits.find(dbs => dbs.original === bs)) {
+      newDecodedBullshits.push(decodeBullshit(bs));
+    }
+  });
+  return newDecodedBullshits;
 }

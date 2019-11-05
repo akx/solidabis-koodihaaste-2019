@@ -1,6 +1,6 @@
 import React from "react";
 
-async function fetchBullshit(): Promise<string[]> {
+async function fetchBullshit(): Promise<readonly string[]> {
   // The API server does not allow the CORS preflight OPTIONS request,
   // so the following doesn't work.  Instead of bothering with a backend to proxy this request without
   // CORS constraints, the author has opted to include the response data in the repository.
@@ -20,9 +20,9 @@ async function fetchBullshit(): Promise<string[]> {
 }
 
 export default function useRemoteBullshit() {
-  const [bullshitList, setBullshitList] = React.useState<string[] | undefined>(
-    undefined,
-  );
+  const [bullshitList, setBullshitList] = React.useState<
+    readonly string[] | undefined
+  >(undefined);
   React.useEffect(() => {
     fetchBullshit().then(shits => setBullshitList(shits));
   }, []);
