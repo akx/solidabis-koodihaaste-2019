@@ -14,6 +14,7 @@ async function fetchBullshit(): Promise<readonly string[]> {
   });
   const { bullshits } = await bullshitResp.json();
   */
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
   const bullshitResp = require("../data/api-response.json");
   const { bullshits } = bullshitResp;
   return bullshits.map((b: { message: string }) => b.message);

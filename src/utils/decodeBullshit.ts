@@ -20,7 +20,7 @@ function computeNgramScore(
       const sub = s.substring(i, i + length);
       if (/^[a-zåäö]+$/i.exec(sub)) {
         nTotal++;
-        if (finnishNgrams.has(sub.toLowerCase())) {
+        if (validSet.has(sub.toLowerCase())) {
           nValid++;
         }
       }
@@ -32,7 +32,7 @@ function computeNgramScore(
 export function decodeBullshit(bs: string): DecodedBullshit {
   const shiftResults: ShiftResult[] = [];
   for (let shift = 0; shift < finnishShiftTables.maxShift; shift++) {
-    let result = caesar(bs, shift, finnishShiftTables);
+    const result = caesar(bs, shift, finnishShiftTables);
     const score = computeNgramScore(
       result,
       finnishNgramsLengths,
